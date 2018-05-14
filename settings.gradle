@@ -1,0 +1,4 @@
+rootProject.name = 'DubboLearning'
+include 'library'  //公共依赖，主要包含公共接口，以及一些公共工具类
+include 'provider'  //dubbo 提供者
+include 'consumer'  //dubbo 消费者
