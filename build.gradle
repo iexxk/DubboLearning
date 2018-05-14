@@ -1,3 +1,6 @@
+plugins {
+    id "org.springframework.boot" version "2.0.1.RELEASE"
+}
 allprojects {
     repositories {
         jcenter() //将jcenter仓库配置到所有项目
@@ -5,4 +8,22 @@ allprojects {
 }
 subprojects {
     version = '1.0' //设置版本号
+}
+configure(subprojects.findAll {it.name == 'provider' || it.name == 'consumer'} ) {
+
+    apply plugin: 'java'
+    apply plugin: 'eclipse'
+    apply plugin: "org.springframework.boot"
+    apply plugin: 'io.spring.dependency-management'
+
+    group = 'exxk.dubbo'
+    version = '0.0.1-SNAPSHOT'
+    sourceCompatibility = 1.8
+
+    dependencies {
+        compile('org.springframework.boot:spring-boot-starter')
+        compile group: 'com.alibaba', name: 'dubbo', version: '2.6.1'
+        testCompile('org.springframework.boot:spring-boot-starter-test')
+        compile project(':library')
+    }
 }
