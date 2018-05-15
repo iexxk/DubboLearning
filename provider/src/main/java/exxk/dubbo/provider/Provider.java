@@ -8,6 +8,15 @@ public class Provider {
                 new String[]{"dubbo-provider.xml"}); //读取dubbo配置文件
         context.start();
         //按任何键推出
-        System.in.read();
+        synchronized (Provider.class){
+            while(true){
+                try {
+                    Provider.class.wait();
+                }catch (Exception e){
+                    System.out.print("synchronized===:"+e);
+                }
+            }
+        }
+
     }
 }
