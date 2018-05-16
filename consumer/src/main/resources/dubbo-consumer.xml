@@ -5,6 +5,6 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
     <dubbo:application name="dubbo-consumer"/>
     <!--注册中心地址（多播）-->
-    <dubbo:registry address="zookeeper://10.14.0.7:2181"/>
+    <!--<dubbo:registry address="zookeeper://10.14.0.7:2181"/>-->
     <dubbo:reference id="demoService" interface="exxk.dubbo.commonimpl.DemoService"/>
 </beans>

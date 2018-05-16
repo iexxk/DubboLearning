@@ -6,7 +6,7 @@
     <!--该提供者服务名称-->
     <dubbo:application name="dubbo-provider"/>
     <!--组播模式的注册中心，推荐用zookeeper-->
-    <dubbo:registry address="zookeeper://10.14.0.7:2181"/>
+    <!--<dubbo:registry address="zookeeper://10.14.0.7:2181"/>-->
     <!--暴露的端口服务-->
     <dubbo:protocol name="dubbo" port="20880"/>
     <!--声明暴露服务公共接口类-->
