@@ -1,1 +1,4 @@
 mainClassName='exxk.dubbo.consumer.ConsumerApplication'
+dependencies{
+    compile group: 'org.apache.shiro', name: 'shiro-core', version: '1.4.0'
+}
